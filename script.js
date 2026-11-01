@@ -1,3 +1,7 @@
+// Players Score
+let humanScore = 0
+let robotScore = 0
+
 // Robot choice
 function getComputerChoice() {
   let x = Math.floor(Math.random() * 3 + 1);
@@ -24,4 +28,3 @@ function getHumanChoice(humanChoice) {
 
 // console.log(getHumanChoice(humanChoicePrompt))
 
-// Players Score
