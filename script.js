@@ -1,15 +1,27 @@
+// Robot choice
 function getComputerChoice() {
   let x = Math.floor(Math.random() * 3 + 1);
 
   if ((x = 1)) {
-    let choice = "rock";
-    return choice
+    let robotChoice = "rock";
+    return robotChoice
   } else if ((x = 2)) {
-    let choice = "paper";
-    return choice
+    let robotChoice = "paper";
+    return robotChoice
   } else {
-    let choice = "scissors";
-    return choice
+    let robotChoice = "scissors";
+    return robotChoice
   }
 }
-console.log(getComputerChoice())
+// console.log(getComputerChoice())
+
+// Human choice
+// let humanChoicePrompt = prompt("Rock, paper scissors?")
+
+function getHumanChoice(humanChoice) {
+  return humanChoice
+}
+
+// console.log(getHumanChoice(humanChoicePrompt))
+
+// Players Score
