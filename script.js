@@ -4,27 +4,38 @@ let robotScore = 0
 
 // Robot choice
 function getComputerChoice() {
-  let x = Math.floor(Math.random() * 3 + 1);
-
-  if ((x = 1)) {
-    let robotChoice = "rock";
-    return robotChoice
-  } else if ((x = 2)) {
-    let robotChoice = "paper";
-    return robotChoice
-  } else {
-    let robotChoice = "scissors";
-    return robotChoice
-  }
+  let computerChoice = Math.floor(Math.random() * 3 + 1);
+  return computerChoice
 }
 // console.log(getComputerChoice())
 
 // Human choice
-// let humanChoicePrompt = prompt("Rock, paper scissors?")
+function getHumanChoice() {
+  let humanChoicePrompt = prompt("Rock, paper scissors?")
+  let humanChoice = humanChoicePrompt.toLowerCase()
 
-function getHumanChoice(humanChoice) {
-  return humanChoice
+  if (humanChoice === "rock"){
+    return humanChoice = 1
+  }
+
+  else if (humanChoice === "paper") {
+    return humanChoice = 2
+  }
+  else if (humanChoice === "scissors") {
+    return humanChoice = 3
+  }
+  else {
+    alert("Please insert a valid answer.")
+  }
 }
 
-// console.log(getHumanChoice(humanChoicePrompt))
+// console.log(getHumanChoice())
 
+// Play round logic
+// Variables:
+// x = humanChoice 
+// y = computerChoice
+
+function playRound(x, y) {
+
+}
