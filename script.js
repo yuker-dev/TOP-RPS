@@ -1,8 +1,8 @@
-// Players Score and variables
-let humanScore = 0;
-let robotScore = 0;
+// Inital variables
 let computerChoice = "";
 let humanChoice = "";
+let intComputerChoice = 0
+let intHumanChoice = 0
 
 // Robot choice
 function getComputerChoice() {
@@ -16,11 +16,11 @@ function getHumanChoice() {
   let humanChoice = humanChoicePrompt.toLowerCase();
 
   if (humanChoice === "rock") {
-    return (intHumanChoice = 1);
+    return 1;
   } else if (humanChoice === "paper") {
-    return (intHumanChoice = 2);
+    return 2;
   } else if (humanChoice === "scissors") {
-    return (intHumanChoice = 3);
+    return 3;
   } else {
     alert("Please insert a valid answer.");
   }
@@ -30,7 +30,7 @@ function getHumanChoice() {
 
 // Play round logic
 // Variables:
-// x = humanChoice
+// intHumanChoice = humanChoice
 // y = computerChoice
 
 // Assign Int value a str value
@@ -39,7 +39,7 @@ function converter(number, variable) {
     return (variable = "rock");
   } else if (number === 2) {
     return (variable = "paper");
-  } else {
+  } else if (number === 3) {
     return (variable = "scissors");
   }
 }
@@ -47,21 +47,53 @@ function converter(number, variable) {
 // 1 = Rock
 // 2 = Paper
 // 3- = Scissors
-intHumanChoice = getHumanChoice();
-intComputerChoice = getComputerChoice();
-computerChoice = converter(intComputerChoice, computerChoice);
-humanChoice = converter(intHumanChoice, humanChoice);
 
-function playRound(x, y) {
-  if ((x == 1 && y == 2) || (x == 2 && y == 3) || (x == 3 && y == 1)) {
-    return "You lost! " + computerChoice + " beats " + humanChoice + " .";
-  } else if ((x == 1 && y == 3) || (x == 2 && y == 1) || (x == 3 && y == 2)) {
-    return "You won!" + humanChoice + " beats " + computerChoice + " .";
-  } else {
-    return "It's a tie!";
+function playGame() {
+  let humanScore = 0;
+  let computerScore = 0;
+
+  function playRound(x, y) {
+
+    if ((x == 1 && y == 2) || (x == 2 && y == 3) || (x == 3 && y == 1)) {
+      computerScore += 1;
+      console.log("You lost this round! " + computerChoice + " beats " + humanChoice + " .")
+      return;
+    } 
+    else if ((x == 1 && y == 3) || (x == 2 && y == 1) || (x == 3 && y == 2)) {
+      humanScore += 1;
+      console.log("You won this round! " + humanChoice + " beats " + computerChoice + " .")
+      return;
+    } 
+    else {
+      console.log("It's a tie!")
+      return;
+    }
+  }
+  
+  for (let nbrRound = 0; nbrRound < 5; nbrRound++) {  
+    let intHumanChoice = getHumanChoice();
+    console.log("inside loop:", intHumanChoice);
+    let intComputerChoice = getComputerChoice();
+    computerChoice = converter(intComputerChoice, computerChoice);
+    humanChoice = converter(intHumanChoice, humanChoice);
+    
+    playRound(intHumanChoice, intComputerChoice);
+
+    console.log(humanChoice);
+    console.log(computerChoice);
+  }
+
+  if (humanScore > computerScore) {
+    console.log("You won the game! ( " + humanScore +" to " + computerScore + " )")
+  }
+  else if (humanScore < computerScore) {
+    console.log("You lost this game :( . ( " + computerScore +" to " + humanScore + " )")
+  }
+  else {
+    console.log("It's a tie! ( " + humanScore +" to " + computerScore + " )")
   }
 }
 
-console.log(intHumanChoice);
-console.log(intComputerChoice);
-console.log(playRound(intHumanChoice, intComputerChoice));
+
+playGame()
+console.log("global:", intHumanChoice);
