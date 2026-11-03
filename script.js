@@ -81,7 +81,6 @@ function playGame() {
 
   for (let nbrRound = 0; nbrRound < 5; nbrRound++) {
     let intHumanChoice = getHumanChoice();
-    console.log("inside loop:", intHumanChoice);
     let intComputerChoice = getComputerChoice();
     computerChoice = converter(intComputerChoice, computerChoice);
     humanChoice = converter(intHumanChoice, humanChoice);
@@ -106,4 +105,4 @@ function playGame() {
 }
 
 playGame();
-console.log("global:", intHumanChoice);
+
