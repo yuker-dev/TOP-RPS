@@ -8,7 +8,6 @@ let intHumanChoice = 0;
 function getComputerChoice() {
   return (intComputerChoice = Math.floor(Math.random() * 3 + 1));
 }
-// console.log(computerChoice())
 
 // Human choice
 function getHumanChoice() {
@@ -25,13 +24,6 @@ function getHumanChoice() {
     alert("Please insert a valid answer.");
   }
 }
-
-// console.log(intHumanChoice)
-
-// Play round logic
-// Variables:
-// intHumanChoice = humanChoice
-// y = computerChoice
 
 // Assign Int value a str value
 function converter(number, variable) {
